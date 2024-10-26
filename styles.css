@@ -41,6 +41,53 @@ body {
     line-height:140%;
 }
 
+#topbar {
+    padding:0 24px;
+    width:calc(100vw - 48px);
+    height:44px;
+    background-color:var(--grey-700);
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999999999;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    font-family:'ibm plex mono';
+}
+
+#topbar a:hover {
+    color:var(--accent-red);
+}
+
+.topnav a {
+    color:var(--grey-100);
+    font-weight:bold;
+    text-decoration:none;
+    padding: 0 5px;
+    font-size:0.9rem;
+}
+
+.topnav a:hover {
+    background-color:var(--grey-100);
+    color:var(--grey-700)!important;
+}
+
+.topicon {
+    font-size:2rem;
+    transform:rotate(180deg);
+    transform-origin:center;
+}
+
+.backlink a {
+    font-size:1.5rem;
+}
+
+.current {
+    background-color:var(--accent-red);
+    color:var(--grey-700)!important;
+}
 
 .page a {
     color:var(--accent-red);
