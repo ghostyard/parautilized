@@ -12,9 +12,6 @@
     --grey-800: #E5E5E5;
     --grey-900: #F5F5F5; 
     --grey-950: #FAFAFA;
-    --accent-blue: #304ed8;
-    --accent-steel: #aca9bb;
-    --accent-bluegrey: #787586;
     --accent-red: #d9112c;
 }
 
@@ -34,34 +31,72 @@
   }
 
 body {
-    font-family:'basic commercial';
+    font-family:Helvetica, Arial, sans-serif;
     margin:0;
     padding:0;
     background-color:var(--grey-700);
     color:var(--grey-100);
-    font-size:1.1rem;
+    font-size:1rem;
     letter-spacing:0.3px;
-    line-height:130%;
+    line-height:140%;
 }
-.pagetext h2 {
-    font-family:'basic commercial bold';
-}
-b {
-    font-family:'basic commercial bold';
+
+
+.page a {
+    color:var(--accent-red);
 }
 
 .headinggrid {
-    display: grid;
-    grid-template-columns: auto 150px;
-    grid-template-rows: auto;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    margin-bottom:60px;
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:48px;
 } 
 
 .leftheading { 
     grid-area: 1 / 1 / 2 / 2; 
 }
+
+.doccontrol {
+    display: grid;
+    grid-template-columns: 45px auto;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width:200px;
+    border:2px solid var(--grey-100);
+    font-family:'ibm plex mono';
+    text-align:center;
+    font-size:0.8rem;
+}
+    
+.docicon { 
+    grid-area: 1 / 1 / 3 / 2; 
+    background-color:var(--grey-100);
+    color:var(--grey-950);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+}
+
+.docicon ion-icon {
+    transform:rotate(180deg);
+    transform-origin:center;
+    font-size:1.5rem;
+}
+.doctitle { 
+    grid-area: 1 / 2 / 2 / 3; 
+    padding:0 40px;
+    border-bottom:1px solid var(--grey-100);
+}
+.docnum { 
+    grid-area: 2 / 2 / 3 / 3; 
+    border-top:1px solid var(--grey-100);
+}
+
+    
 .rightheading { 
     grid-area: 1 / 2 / 2 / 3; 
 } 
@@ -69,6 +104,7 @@ b {
 .rightheading img {
     width:150px;
 }
+
 .page {
     width:700px;
     background-color:var(--grey-950);
@@ -76,3 +112,214 @@ b {
     margin:50px auto;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
+.pagetext span {
+    background-color:var(--grey-100)!important;
+}
+
+#open {
+    font-family:'ibm plex mono';
+    text-align:center;
+    cursor:pointer;
+    transition:0.5s;
+    width:100px;
+    margin:auto;
+    margin-top:55px;
+    margin-bottom:50px;
+}
+
+
+#open:hover .txt span {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition:0.5s;
+}
+
+.txt span {
+    background-color:var(--grey-100);
+    color:var(--grey-700);
+    padding:2px 5px;
+    transition:0.5s;
+}
+
+#open ion-icon {
+    font-size:5rem;
+    transform:rotate(180deg);
+    transform-origin:center;
+    color:var(--accent-red);
+}
+
+#navmenu {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+}
+
+#navmenu[style*='display: block']{
+    display: flex !important;
+}
+
+.menutitle {
+    font-size:3rem;
+    font-weight:bold;
+    margin-bottom:32px;
+    text-align:center;
+}
+
+.menutitle span {
+    font-family:'ibm plex mono';
+    font-size:0.9rem;
+    font-weight:normal;
+    letter-spacing:0.8px;
+    margin-top:24px;
+}
+.menulinks {
+    display:flex;
+    gap:16px;
+
+}
+
+.menulinks a {
+    color:var(--accent-red);
+    font-family:'ibm plex mono';
+    text-decoration:none;
+    text-align:center;
+    border:2px solid var(--accent-red);
+    display:inline-block;
+    width:300px;
+    padding:10px 0;
+    transition: 0.25s filter linear;
+    -webkit-transition: 0.25s filter linear;
+    -moz-transition: 0.25s filter linear;
+    -o-transition: 0.25s filter linear;
+    filter: blur(1px);
+}
+
+.menulinks a:hover {
+    filter: blur(0);
+}
+
+.menulinks a span {
+    font-size:0.8rem;
+}
+
+.triangle {
+    font-size:4rem;
+    margin-bottom:48px;
+    transform:rotate(180deg);
+    transform-origin:center;
+    border:2px solid var(--accent-red);
+    padding:45px;
+    border-radius:100%;
+}
+
+.returnlink {
+    margin-top:24px;
+}
+
+.returnlink a {
+    font-family:'ibm plex mono';
+    color:var(--grey-100);
+    text-decoration:none;
+    padding:2px 10px;
+}
+
+.returnlink a:hover {
+    background-color:var(--grey-100);
+    color:var(--grey-700);
+}
+
+.page accent, .ripped accent {
+    font-weight:bold;
+}
+
+.page trait {  
+    background-color:var(--grey-100);
+    padding:1px 5px;
+    color:var(--grey-950);
+    font-family:'ibm plex mono';
+    font-size:0.9rem;
+}
+
+.ripped {
+    width:500px;
+    background-color:var(--grey-950);
+    padding:60px 50px;
+    padding-bottom:0;
+    margin:50px auto;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: relative;
+}
+
+.ripped::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    height: 20px;
+    width: 500px;
+    left: 0;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/23618/rip.svg) bottom;
+    background-size: 200%;
+}
+
+.abt img {
+    filter: grayscale(1);
+    width:250px;
+    float:right;
+    margin-left:16px;
+}
+
+/** oop slideshow **/
+
+.tabcontainer {
+    height:640px;
+}
+
+.tab {
+    float: left;
+    background-color: #f1f1f1;
+    width: 25%;
+    height:300px;
+    box-sizing: border-box;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    float: right;
+    padding: 0px 12px;
+    width: 70%;
+    border-left: none;
+    height: 300px;
+  }
+
+  .tabcontent img {
+    float:right;
+    width:150px;
+    margin-left:16px;
+  }
